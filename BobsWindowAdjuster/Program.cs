@@ -15,12 +15,6 @@ namespace BobsWindowAdjuster
             Thread t = new Thread(sub.WaitForProcess);
             t.IsBackground = true;
             t.Start();
-            var mess = Process.GetProcessesByName("messenger");
-            foreach(var m in mess)
-            {
-                var wh = m.MainWindowHandle;
-                MoveWindow(wh, -1920, 0, 4480, 1080, true);
-            }
             Console.WriteLine("Press Enter To Quit");
             Console.ReadLine();
 
